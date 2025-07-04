@@ -11,19 +11,55 @@
       color: #4b004b;
       padding: 20px;
       max-width: 600px;
-      margin: 40px auto;
+      margin: 80px auto;
       border-radius: 10px;
       box-shadow: 0 0 15px #d94da6;
-    }
-    h1 {
       text-align: center;
-      margin-bottom: 30px;
     }
-    p {
+
+    button {
+      background: linear-gradient(45deg, #d94da6, #f06292);
+      border: none;
+      color: white;
+      font-size: 22px;
+      padding: 15px 40px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(217, 77, 166, 0.6);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(217, 77, 166, 0.9);
+    }
+
+    #carta {
+      margin-top: 40px;
+      text-align: left;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease, max-height 1s ease;
+      background: #fff0f6;
+      padding: 0 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #d94da6aa;
+    }
+
+    #carta.mostra {
+      opacity: 1;
+      max-height: 1000px; /* valor alto para permitir o conteúdo expandir */
+      padding: 20px;
+    }
+
+    #carta p {
       line-height: 1.6;
       font-size: 18px;
+      margin: 15px 0;
     }
-    footer {
+
+    #carta footer {
       margin-top: 40px;
       text-align: right;
       font-style: italic;
@@ -32,16 +68,31 @@
   </style>
 </head>
 <body>
-  <h1>Minha princesa, minha vida e o meu amor</h1>
 
-  <p>Eu não sei por onde começar a expressar o quanto você significa para mim. Você é meu amor, minha vida, meu tudo.</p>
-  <p>Quero te pedir desculpas por todos os erros que cometi, por todas as vezes que eu não fui o melhor para você. Eu sei que não sou perfeito, mas prometo que estou tentando ser melhor para você.</p>
-  <p>Quero agradecer pela sua paciência, pela sua compreensão e pelo seu amor. Eu amo você mais do que palavras podem expressar.</p>
-  <p>Você é a mulher da minha vida, a minha melhor amiga, a minha parceira em todos os sentidos. Eu prometo continuar trabalhando para ser o melhor para você, para te fazer feliz e para te amar cada vez mais.</p>
-  <p>Obrigado por ser você, minha princesa. Eu te amo agora e para sempre.</p>
+  <button id="mostrarCartaBtn">Abrir minha carta para você 💖</button>
 
-  <footer>Com muito amor, carinho e saudade : Felipe</footer>
+  <div id="carta">
+    <p>Minha princesa, minha vida e o meu amor,</p>
+
+    <p>Eu não sei por onde começar a expressar o quanto você significa para mim. Você é meu amor, minha vida, meu tudo.</p>
+    <p>Quero te pedir desculpas por todos os erros que cometi, por todas as vezes que eu não fui o melhor para você. Eu sei que não sou perfeito, mas prometo que estou tentando ser melhor para você.</p>
+    <p>Quero agradecer pela sua paciência, pela sua compreensão e pelo seu amor. Eu amo você mais do que palavras podem expressar.</p>
+    <p>Você é a mulher da minha vida, a minha melhor amiga, a minha parceira em todos os sentidos. Eu prometo continuar trabalhando para ser o melhor para você, para te fazer feliz e para te amar cada vez mais.</p>
+    <p>Obrigado por ser você, minha princesa. Eu te amo agora e para sempre.</p>
+
+    <footer>Com muito amor, carinho e saudade : Felipe</footer>
+  </div>
+
+  <script>
+    const btn = document.getElementById('mostrarCartaBtn');
+    const carta = document.getElementById('carta');
+
+    btn.addEventListener('click', () => {
+      carta.classList.add('mostra');
+      btn.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
-!DOCTYPE html>
-<
+
